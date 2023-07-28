@@ -33,12 +33,12 @@ namespace HairSalon.Controllers
         }
         public ActionResult Details(int id)
         {
-            Client thisClient = _dbClients.Include(client => client.Stylists).FirstOrDefault(client => client.ClientId == id);
+            Client thisClient = _db.Clients.Include(client => client.Stylists).FirstOrDefault(client => client.ClientId == id);
             return View(thisClient);
         }
         public ActionResult Edit(int id)
         {
-            Client thisClient = _dbClients.FirstOrDefault(client => client.ClientId == id);
+            Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
             return View(thisClient);
         }
         [HttpPost]
@@ -46,11 +46,11 @@ namespace HairSalon.Controllers
         {
             _db.Clients.Update(client);
             _db.SaveChanges();
-            return RediredtToAction("Index");
+            return RedirectToAction("Index");
         }
         public ActionResult Delete(int id)
         {
-            Client thisClient = _db.Clients.FirstDefault(client => client.ClientId == id);
+            Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
             return View(thisClient);
         }
         public ActionResult DeleteConfirmed(int id)

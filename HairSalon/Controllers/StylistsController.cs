@@ -17,7 +17,7 @@ namespace  HairSalon.Controllers
 
         public ActionResult Index()
         {
-            List<Stylist> model = _db.Stylists.Include(Stylist => Stylist.Clients).ToList();
+            List<Stylist> model = _db.Stylists.Include(stylist => stylist.Client).ToList();
             return View(model);
         }
         public ActionResult Create()
@@ -32,7 +32,7 @@ namespace  HairSalon.Controllers
             {
                 return RedirectToAction("Create");
             }
-            _db.Stylists.Add(stylists);
+            _db.Stylists.Add(stylist);
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -43,8 +43,8 @@ namespace  HairSalon.Controllers
         }
         public ActionResult Edit(int id)
         {
-            Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId);
-            ViewBag.ClientsId = new SlectList(_db.Clients, "ClientId", "Name");
+            Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+            ViewBag.ClientId = new SelectList(_db.Clients, "ClientId", "Name");
             return View (thisStylist);
         }
         [HttpPost]
@@ -54,15 +54,15 @@ namespace  HairSalon.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
-        public Action Delete(int id)
+        public ActionResult Delete(int id)
         {
-            Stylist thisStylist = _db.StylistsFirstOrDefault(stylist => stylist.StylistId == id );
+            Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id );
             return View(thisStylist);
         }
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Stylist thisStylist = db.Stylists.FirstOfDefault(Stylist => Stylist.StylistId == id);
+            Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
             _db.Stylists.Remove(thisStylist);
             _db.SaveChanges();
             return RedirectToAction("Index");
