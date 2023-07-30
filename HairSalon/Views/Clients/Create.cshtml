@@ -6,9 +6,12 @@
 
 <h4>Add a new Client</h4>
 @using (Html.BeginForm())
+
 {
+@Html.Hidden("StylistId",(int) ViewBag.StylistId )
+
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name)
   <input type="submit" value="Add new Client" />
 }
-<p>@Html.ActionLink("Show all Clients", "Index")</p>
+<p>@Html.ActionLink("Show all Clients", "Details", "Stylists", new {id = ViewBag.StylistId})</p>

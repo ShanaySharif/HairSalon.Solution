@@ -2,10 +2,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HairSalon.Controllers
 {
+  
     public class HomeController : Controller
     {
-            public ActionResult Index()
+
+      [HttpGet("/")]
+      public ActionResult Index()
       {
+       
         return View();
       }
      
