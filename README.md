@@ -1,7 +1,5 @@
 Eau Claire's Salon
 By Shankaron Mohamed 
-## Week 10 Epicodus independent project: Build an MVC web application to help a salon owner manage their employees (stylists) and their clients.
-
 ## Technologies Used
 - C#
 - Entity Framework Core
