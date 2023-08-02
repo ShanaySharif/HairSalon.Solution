@@ -4,6 +4,9 @@
 
 @model HairSalon.Models.Stylist
 
+<div>
+<div class="form">
+
 <h4>Add a new Stylist</h4>
 @using (Html.BeginForm())
 {
@@ -13,6 +16,14 @@
   
   @* @Html.DropDownList("ClientId") *@
   
+  <btn class ="btn"> 
   <input type="submit" value="Add new Stylist" />
+  </btn>
 }
-<p>@Html.ActionLink("Show all Stylists", "Index")</p>
+<p>@Html.ActionLink("Show all Stylists", "Index", "Home")</p>
+
+
+</btn>
+</div>
+</div>
+

@@ -4,7 +4,17 @@
 
 @model HairSalon.Models.Client
 
-<h4>Add a new Client</h4>
+<header>  
+<h4>Add Client</h4>
+
+<ul class="navbar"> 
+  <li>@Html.ActionLink("Stylists", "Index", "Home")</li>
+  <li>@Html.ActionLink("Add Stylists", "Create", "Stylists", new {id = ViewBag.StylistId})</li>
+
+</ul>
+</header>
+
+<div> 
 @using (Html.BeginForm())
 
 {
@@ -12,6 +22,11 @@
 
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name)
+
+
   <input type="submit" value="Add new Client" />
 }
-<p>@Html.ActionLink("Show all Clients", "Details", "Stylists", new {id = ViewBag.StylistId})</p>
+
+
+</div>
+
