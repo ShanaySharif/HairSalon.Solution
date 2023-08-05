@@ -4,29 +4,20 @@
 
 @model HairSalon.Models.Client
 
-<header>  
-<h4>Add Client</h4>
+<h4>Add a new client</h4>
 
-<ul class="navbar"> 
-  <li>@Html.ActionLink("Stylists", "Index", "Home")</li>
-  <li>@Html.ActionLink("Add Stylists", "Create", "Stylists", new {id = ViewBag.StylistId})</li>
+<p><strong>NOTE:</strong> You need to have at least one stylist before adding new clients!</p>
+<p>Go to @Html.ActionLink("this page", "Create", "Stylists") to create a stylist profile.</p>
 
-</ul>
-</header>
-
-<div> 
 @using (Html.BeginForm())
-
 {
-@Html.Hidden("StylistId",(int) ViewBag.StylistId )
+  @Html.LabelFor(model => model.ClientName)
+  @Html.TextBoxFor(model => model.ClientName)
 
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name)
+  @Html.LabelFor(model => model.Stylist)
+  @Html.DropDownList("StylistId")
 
-
-  <input type="submit" value="Add new Client" />
+  <input type="submit" value="Add new client" />
 }
-
-
-</div>
-
+<p>@Html.ActionLink("Show all clients", "Index")</p>
+<p>@Html.ActionLink("Show all stylists", "Index", "Stylists")</p>
