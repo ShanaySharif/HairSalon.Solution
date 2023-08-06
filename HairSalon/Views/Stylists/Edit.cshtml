@@ -2,21 +2,23 @@
   Layout = "_Layout";
 }
 
-@model HairSalon.Models.Client;
+@model HairSalon.Models.Stylist
 
-<h2>Edit client Page: @Html.DisplayFor(model => model.ClientName)</h4>
+<h2>Edit stylist profile: 
+<br>
+@Html.DisplayFor(model => model.StylistName)</h2>
 
 @using (Html.BeginForm())
 {
-  @Html.HiddenFor(model => model.ClientId)
+  @Html.HiddenFor(model => model.StylistId)
 
-  @Html.LabelFor(model => model.ClientName)
-  @Html.EditorFor(model => model.ClientName)
-
-  @Html.LabelFor(model => model.Stylist)
-  @Html.DropDownList("StylistId")
+  @Html.LabelFor(model => model.StylistName)
+  @Html.EditorFor(model => model.StylistName)
+  <br>
+  <br>
+  @Html.LabelFor(model => model.Description)
+  @Html.EditorFor(model => model.Description)
 
   <input type="submit" value="Save" />
 }
-
 <p>@Html.ActionLink("Back to list", "Index")</p>
