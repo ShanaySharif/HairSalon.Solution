@@ -12,9 +12,7 @@ By Shankaron Mohamed
 
 Description
 
-This application allows Pierre's Friend Claire (Please refer to Pierre;s Bakery project) to manage her stylist and thier clients. It allows Claire as the Salon owner to add a list of stylists working at the salon, and for each stylist, add clients who see the stylist. 
-The application allows a user to create, add stylist or add a client edit, and delete both clients and stylists. 
-
+This application enables Claire, a friend of Pierre (please refer to the Pierre's Bakery project), to efficiently oversee her team of stylists and their clientele. As the salon owner, Claire can effortlessly maintain a comprehensive list of stylists employed at her establishment. Moreover, for each stylist, she has the ability to manage their respective clients. The application empowers users to seamlessly create, add, edit, and delete both stylists and clients.
 
 ## Setup Instructions
 - Open your shell of choice (e.g., Terminal or GitBash) and run these commands:
