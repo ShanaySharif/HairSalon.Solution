@@ -23,7 +23,7 @@ Clone the project using $ git clone https://github.com/user/Salon.Solution.git
 - Importing the MySQL Database:
 - Open MySQL Workbench, in the Navigator > Administration window, select Data Import/Restore.
 - In Import Options select Import from Self-Contained File.
-- Navigate to the sql file located in the root directory of this project called lindsay_warr.sql
+- Navigate to the sql file located in the root directory of this project called shankaron.sql
 - Under Default Schema to be Imported To, select the New button.
 - Choose a name for your database, or simply use Shankaron_Mohamed.sql and
 Click OK
